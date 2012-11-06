@@ -14,6 +14,8 @@ public abstract class BaseVectorShape {
 	private double moveAngle;
 	private double faceAngle;
 	
+	public BaseVectorShape(){}
+	
 	public Shape getShape() {
 		return shape;
 	}
