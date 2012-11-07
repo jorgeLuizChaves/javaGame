@@ -18,6 +18,9 @@ public class GameAsteroids extends Applet implements Runnable, KeyListener{
 	private BufferedImage bufferedImage;
 	private Graphics2D graphics2d;
 	private boolean showBounds;
+	private Controlable controlShip = new ControlShip();
+	private Controlable controlBullets = new ControlBullets();
+	private Controlable controlAsteroids = new ControlAsteroids();
 
 	@Override
 	public void keyTyped(KeyEvent e) {}
@@ -52,6 +55,19 @@ public class GameAsteroids extends Applet implements Runnable, KeyListener{
 	@Override
 	public void stop(){
 		gameloop = null;
+	}
+	
+	@Override
+	public void init(){
+		int width = ConstantGame.WIDTH.getValue();
+		int height = ConstantGame.HEIGHT.getValue();
+		bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		graphics2d = bufferedImage.createGraphics();
+		
+		controlAsteroids.setup();
+		controlBullets.setup();
+		controlShip.setup();
+		addKeyListener(this);
 	}
 
 	private void gameUpdate() {

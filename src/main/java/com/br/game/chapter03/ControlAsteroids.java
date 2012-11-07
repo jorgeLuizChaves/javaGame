@@ -10,19 +10,19 @@ public class ControlAsteroids implements Controlable {
 	private static int ASTEROIDS = 20;
 	Asteroid[] asteroids = new Asteroid[ASTEROIDS];
 	private Random random = new Random();
-	
+
 	@Override
 	public void setup() {
 		for(int cont=0; cont < ASTEROIDS; cont++){
 			Asteroid asteroid = new Asteroid();
-			
+
 			double rotationVelocity = (random.nextInt(3) + 1);
 			double positionX = (double)(random.nextInt(600) + 20);
 			double positionY = (double) (random.nextInt(440) + 20);
 			double moveAngle = (random.nextInt(360));
 			double velocityX = calculateAngleMoveX(moveAngle);
 			double velocityY = calculateAngleMoveY(moveAngle);
-			
+
 			asteroid.setRotationVelocity(rotationVelocity);
 			asteroid.setPositionX(positionX);
 			asteroid.setPositionY(positionY);
@@ -32,7 +32,7 @@ public class ControlAsteroids implements Controlable {
 			asteroids[cont] = asteroid ;
 		}
 	}
-	
+
 	@Override
 	public void draw(Graphics2D graphics2d, AffineTransform affineTransform) {
 		for(Asteroid asteroid: asteroids){
@@ -45,12 +45,12 @@ public class ControlAsteroids implements Controlable {
 			}
 		}
 	}
-	
+
 	@Override
 	public void update() {
-		
+
 	}
-	
+
 	private double calculateAngleMoveX(double moveAngle) {
 		return (double) (Math.cos((moveAngle - 90) * Math.PI / 180));
 	}
@@ -59,5 +59,5 @@ public class ControlAsteroids implements Controlable {
 		moveAngle -= 90;
 		return (double) (Math.sin((moveAngle - 90) * Math.PI / 180));
 	}
-	
+
 }
