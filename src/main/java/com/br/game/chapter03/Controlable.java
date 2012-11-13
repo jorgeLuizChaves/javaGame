@@ -5,7 +5,7 @@ import java.awt.geom.AffineTransform;
 
 public interface Controlable {
 
-	void setup();
+	void init();
 	void draw(Graphics2D graphics2d, AffineTransform affineTransform);
-	void update();
+	void update(int height, int width);
 }

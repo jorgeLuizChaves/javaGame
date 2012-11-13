@@ -2,8 +2,8 @@ package com.br.game.chapter03;
 
 public enum ConstantGame {
 
-	HEIGHT(640),
-	WIDTH(480);
+	HEIGHT(480),
+	WIDTH(640);
 	
 	private int value;
 	

@@ -10,7 +10,7 @@ public class Asteroid extends BaseVectorShape {
 	private double rotationVelocity;
 	
 	public Asteroid(){
-		setShape(new Polygon(ASTEROIDS_COORDINATES_X, ASTEROIDS_COORDINATES_Y, ASTEROIDS_COORDINATES_X.length));
+		setShape(new Polygon(ASTEROIDS_COORDINATES_X, ASTEROIDS_COORDINATES_Y, (ASTEROIDS_COORDINATES_X.length -1)));
 		setAlive(true);
 	}
 	
