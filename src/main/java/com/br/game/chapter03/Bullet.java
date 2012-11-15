@@ -5,14 +5,18 @@ import java.awt.Shape;
 
 public class Bullet extends BaseVectorShape {
 
+	
 	public Bullet(){
 		configureBullet();
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		
-		return null;
+		int width = 1;
+		int height = 1;
+		int coordinatesX = (int) getPositionX();
+		int coordinatesY = (int) getPositionY();
+		return new Rectangle(coordinatesX, coordinatesY, width, height);
 	}
 	
 	private void configureBullet() {

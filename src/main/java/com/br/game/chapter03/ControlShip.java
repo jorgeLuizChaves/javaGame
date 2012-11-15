@@ -1,5 +1,6 @@
 package com.br.game.chapter03;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
@@ -27,6 +28,7 @@ public class ControlShip implements Controlable {
 		graphics2d.setTransform(affineTransform);
 		graphics2d.translate(ship.getPositionX(), ship.getPositionY());
 		graphics2d.rotate(Math.toRadians(ship.getFaceAngle()));
+		graphics2d.setColor(Color.BLUE);
 		graphics2d.fill(ship.getShape());
 	}
 

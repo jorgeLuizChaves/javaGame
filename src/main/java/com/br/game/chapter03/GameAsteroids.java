@@ -12,16 +12,16 @@ import java.util.Random;
 
 public class GameAsteroids extends Applet implements Runnable, KeyListener{
 
-	private static final long serialVersionUID = -4042446149548339638L;
 	private static final int TWENTY_MILLISECONDS = 20;
-	private Random random = new Random();
-	private AffineTransform affineTransform = new AffineTransform();
+	private static final long serialVersionUID = -4042446149548339638L;
 	private Thread gameloop;
-	private BufferedImage bufferedImage;
-	private Graphics2D graphics2d;
 	private boolean showBounds;
+	private Graphics2D graphics2d;
+	private BufferedImage bufferedImage;
+	private Random random = new Random();
 	private ControlShip controlShip = new ControlShip();
 	private ControlBullets controlBullets = new ControlBullets();
+	private AffineTransform affineTransform = new AffineTransform();
 	private ControlAsteroids controlAsteroids = new ControlAsteroids();
 	private ManagerCollision managerCollision = new ManagerCollision();
 
@@ -52,7 +52,6 @@ public class GameAsteroids extends Applet implements Runnable, KeyListener{
 			break;
 		}
 	}
-
 
 	@Override
 	public void run() {
@@ -99,7 +98,9 @@ public class GameAsteroids extends Applet implements Runnable, KeyListener{
 		graphics2d.setPaint(Color.BLACK);
 		int coordinateX = 0;
 		int coordinateY = 0;
-		graphics2d.fillRect(coordinateX, coordinateY, getSize().width, getSize().height);
+		int width = getSize().width;
+		int height = getSize().height;
+		graphics2d.fillRect(coordinateX, coordinateY, width, height);
 		graphics2d.setColor(Color.WHITE);
 
 		String xyPostion = controlShip.getXYPositionToString();
@@ -185,5 +186,4 @@ public class GameAsteroids extends Applet implements Runnable, KeyListener{
 	public void setRandom(Random random) {
 		this.random = random;
 	}
-
 }

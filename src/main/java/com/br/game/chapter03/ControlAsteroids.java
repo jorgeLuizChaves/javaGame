@@ -48,7 +48,7 @@ public class ControlAsteroids implements Controlable {
 				graphics2d.setTransform(affineTransform);
 				graphics2d.translate(asteroid.getPositionX(), asteroid.getPositionY());
 				graphics2d.rotate(Math.toRadians(asteroid.getMoveAngle()));
-				graphics2d.setColor(Color.GRAY);
+				graphics2d.setColor(Color.LIGHT_GRAY);
 				graphics2d.fill(asteroid.getShape());
 			}
 		}
