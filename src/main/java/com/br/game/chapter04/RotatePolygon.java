@@ -9,7 +9,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.geom.AffineTransform;
 
 public class RotatePolygon extends Applet implements KeyListener, MouseListener{
 
@@ -30,7 +29,6 @@ public class RotatePolygon extends Applet implements KeyListener, MouseListener{
 	@Override
 	public void paint(Graphics graphics){
 		Graphics2D graphics2d = (Graphics2D) graphics;
-		AffineTransform affineTransform = new AffineTransform();
 		
 		int width = getSize().width;
 		int height = getSize().height;
