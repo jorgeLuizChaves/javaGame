@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.net.URL;
 
 public class DrawImage extends Applet {
@@ -19,7 +20,9 @@ public class DrawImage extends Applet {
 	@Override
 	public void init(){
 		URL url = getURL(CASTLE_PNG);
-		image = getImage(url);
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		image = toolkit.getImage(url);
+//		image = getImage(url);
 	}
 
 	@Override
@@ -40,6 +43,7 @@ public class DrawImage extends Applet {
 		// url = this.getClass().getResource(fileName);
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		url = classLoader.getResource(COM_BR_GAME_CHAPTER05 + fileName);
+		
 		return url;
 	}
 }
