@@ -1,11 +1,13 @@
 package com.br.game.chapter03;
 
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 
 public abstract class BaseVectorShape {
 	
 	private Shape shape;
+	private Image image;
 	private boolean alive;
 	private double positionX;
 	private double positionY;
@@ -104,5 +106,13 @@ public abstract class BaseVectorShape {
 		this.moveAngle += value;
 	}
 	
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+
 	public abstract Rectangle getBounds();
 }
