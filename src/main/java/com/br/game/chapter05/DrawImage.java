@@ -10,10 +10,8 @@ import java.net.URL;
 
 public class DrawImage extends Applet {
 
+	private static final long serialVersionUID = -4219929228896481506L;
 	private static final String CASTLE_PNG = "castle.png";
-	private static final String COM_BR_GAME_CHAPTER05 = "com/br/game/chapter05/";
-
-	private static final long serialVersionUID = -1751612774608925567L;
 
 	private Image image;
 
@@ -22,7 +20,7 @@ public class DrawImage extends Applet {
 		URL url = getURL(CASTLE_PNG);
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		image = toolkit.getImage(url);
-//		image = getImage(url);
+		image = getImage(url);
 	}
 
 	@Override
@@ -39,11 +37,14 @@ public class DrawImage extends Applet {
 
 	private URL getURL(String fileName){
 		URL url = null;
-		// png file must be in the .class folder
-		// url = this.getClass().getResource(fileName);
-		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-		url = classLoader.getResource(COM_BR_GAME_CHAPTER05 + fileName);
-		
+		 url = getURLByClass(fileName);
 		return url;
 	}
+
+	private URL getURLByClass(String fileName) {
+		URL url;
+		url = this.getClass().getResource(fileName);
+		return url;
+	}
+
 }
