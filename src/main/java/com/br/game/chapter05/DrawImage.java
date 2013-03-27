@@ -8,6 +8,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
+import com.br.game.util.GameAppletUtil;
+
 public class DrawImage extends Applet {
 
 	private static final long serialVersionUID = -4219929228896481506L;
@@ -42,9 +44,8 @@ public class DrawImage extends Applet {
 	}
 
 	private URL getURLByClass(String fileName) {
-		URL url;
-		url = this.getClass().getResource(fileName);
-		return url;
+		GameAppletUtil gameAppletUtil = GameAppletUtil.getInstance();
+		return gameAppletUtil.getURL(this.getClass(), fileName);
 	}
 
 }
